@@ -8,9 +8,15 @@ return array(
             'ViewTwigStrategy' => 'ZF2Twig\View\Strategy\TwigStrategyFactory',
             'ZFTwigPluginProvider' => 'ZF2Twig\Environment\PluginProviderFactory',
         ),
+        'invokables' => array(
+            'ZFHelperExtension' => 'ZF2Twig\Extension\ZFHelper',
+        ),
     ),
     'zf2twig' => array(
         'default_suffix' => 'twig',
         'environment_options' => array(),
+        'extensions' => array(
+            'ZFHelperExtension',
+        ),
     ),
 );
