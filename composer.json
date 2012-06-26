@@ -1,0 +1,25 @@
+{
+    "name": "alancrisp/ZF2Twig",
+    "description": "Integrates Twig template engine into Zend Framework 2.",
+    "authors": [
+        {
+            "name": "Alan Crisp",
+            "email": "alan.crisp@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "dev-master",
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "zendframework/zendframework": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "ZF2Twig": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    }
+}
