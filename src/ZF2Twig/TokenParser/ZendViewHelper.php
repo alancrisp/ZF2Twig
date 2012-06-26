@@ -11,12 +11,12 @@ use ZF2Twig\Node\ZendViewHelper as ZendViewHelperNode;
  *         Zend:
  *             $this->doctype('HTML5')
  *         Twig:
- *             {% zend doctype('HTML5') %}
+ *             {% plugin doctype('HTML5') %}
  *     HeadScript:
  *         Zend:
  *             $this->headScript->appendFile('script.js')
  *         Twig:
- *             {% zend headScript.appendFile('script.js') %}
+ *             {% plugin headScript.appendFile('script.js') %}
  */
 class ZendViewHelper extends \Twig_TokenParser
 {

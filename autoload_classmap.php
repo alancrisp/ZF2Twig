@@ -14,6 +14,5 @@ return array(
     'ZF2Twig\View\Renderer\TwigRenderer'          => __DIR__ . '/src/ZF2Twig/View/Renderer/TwigRenderer.php',
     'ZF2Twig\View\Renderer\TwigRendererFactory'   => __DIR__ . '/src/ZF2Twig/View/Renderer/TwigRendererFactory.php',
     'ZF2Twig\TokenParser\ZendViewHelper'          => __DIR__ . '/src/ZF2Twig/TokenParser/ZendViewHelper.php',
-    'ZF2Twig\PluginProvider'                      => __DIR__ . '/src/ZF2Twig/ZendHelperFunction.php',
     'ZF2Twig\Module'                              => __DIR__ . '/Module.php',
 );
