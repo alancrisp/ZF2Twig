@@ -16,7 +16,6 @@ return array(
         'default_suffix' => 'twig',
         'environment_options' => array(),
         'extensions' => array(
-            'ZFHelperExtension',
         ),
     ),
 );
