@@ -15,7 +15,7 @@ class Module implements AutoloaderProviderInterface
         $view = $serviceManager->get('view');
         $twigStrategy = $serviceManager->get('ViewTwigStrategy');
 
-        $view->events()->attach($twigStrategy, 100);
+        $view->getEventManager()->attach($twigStrategy, 100);
     }
 
     public function getAutoloaderConfig()

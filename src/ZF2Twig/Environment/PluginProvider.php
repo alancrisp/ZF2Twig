@@ -1,28 +1,28 @@
 <?php
 namespace ZF2Twig\Environment;
 
-use Zend\View\HelperBroker;
+use Zend\View\HelperPluginManager;
 
 class PluginProvider implements PluginProviderInterface
 {
     /**
-     * @var HelperBroker
+     * @var HelperPluginManager
      */
-    protected $helperFunction;
+    protected $helperManager;
 
     /**
      * Constructor
      *
-     * @param HelperBroker $helperBroker
+     * @param HelperPluginManager $helperManager
      * @return void
      */
-    public function __construct(HelperBroker $helperBroker)
+    public function __construct(HelperPluginManager $helperManager)
     {
-        $this->helperBroker = $helperBroker;
+        $this->helperManager = $helperManager;
     }
 
     /**
-     * Invoke helper plugin
+     * Invoke helper manager
      *
      * @param string $name
      * @param array $arguments
@@ -30,6 +30,6 @@ class PluginProvider implements PluginProviderInterface
      */
     public function __call($name, $arguments)
     {
-        return call_user_func_array(array($this->helperBroker->load($name), '__invoke'), $arguments);
+        return call_user_func_array(array($this->helperManager->get($name), '__invoke'), $arguments);
     }
 }
