@@ -14,8 +14,8 @@ class PluginProviderFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceManager)
     {
-        $helperBroker = $serviceManager->get('viewhelperbroker');
+        $helperManager = $serviceManager->get('ViewHelperManager');
 
-        return new PluginProvider($helperBroker);
+        return new PluginProvider($helperManager);
     }
 }
