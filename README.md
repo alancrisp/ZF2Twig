@@ -13,7 +13,8 @@ Configuration
 
 All configuration for ZF2Twig resides within the `zf2twig` configuration key.
 
-`'zf2twig' => array(
+```php
+'zf2twig' => array(
     'default_suffix' => 'twig', // default suffix for twig template files
     'environment_options' => array(
         // any ordinary twig configuration
@@ -22,4 +23,5 @@ All configuration for ZF2Twig resides within the `zf2twig` configuration key.
     'extensions' => array(
         // extension classes, loaded from service manager
     ),
-),`
+),
+```
