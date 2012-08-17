@@ -25,7 +25,6 @@ class Environment extends \Twig_Environment
         $this->pluginProvider = $pluginProvider;
 
         $this->addGlobal('plugin', $this->plugin());
-        $this->addTokenParser(new ZendViewHelper());
     }
 
     /**
