@@ -1,8 +1,6 @@
 <?php
 namespace ZF2Twig\Environment;
 
-use ZF2Twig\TokenParser\ZendViewHelper;
-
 class Environment extends \Twig_Environment
 {
     /**
