@@ -21,6 +21,16 @@ class PluginProvider implements PluginProviderInterface
         $this->helperManager = $helperManager;
     }
 
+    public function setRenderer($renderer)
+    {
+        $this->helperManager->setRenderer($renderer);
+    }
+
+    public function getRenderer()
+    {
+        return $this->helperManager->getRenderer();
+    }
+
     /**
      * Invoke helper manager
      *
@@ -28,8 +38,12 @@ class PluginProvider implements PluginProviderInterface
      * @param array $arguments
      * @return mixed
      */
-    public function __call($name, $arguments)
+    public function __call($name, array $arguments = null)
     {
+        if (null === $arguments) {
+            return $this->helperManager->get($name);
+        }
+
         return call_user_func_array(array($this->helperManager->get($name), '__invoke'), $arguments);
     }
 }

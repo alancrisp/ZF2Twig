@@ -14,7 +14,6 @@ class Environment extends \Twig_Environment
      * @param \Twig_LoaderInterface $loader
      * @param PluginProviderInterface $pluginProvider
      * @param array $options
-     * @return void
      */
     public function __construct(\Twig_LoaderInterface $loader = null, PluginProviderInterface $pluginProvider = null, array $options = array())
     {
@@ -28,10 +27,16 @@ class Environment extends \Twig_Environment
     /**
      * Get plugin provider
      *
-     * @return PluginProviderInterface
+     * @param string $name
+     * @param array|null $arguments
+     * @return mixed
      */
-    public function plugin()
+    public function plugin($name = null, array $arguments = null)
     {
-        return $this->pluginProvider;
+        if (null === $name) {
+            return $this->pluginProvider;
+        }
+
+        return $this->pluginProvider->$name($arguments);
     }
 }

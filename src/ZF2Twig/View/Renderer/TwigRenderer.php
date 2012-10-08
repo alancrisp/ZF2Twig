@@ -93,4 +93,13 @@ class TwigRenderer implements RendererInterface
 
         return $this->twig->render($template, $values);
     }
+
+    public function plugin($name, array $arguments = null)
+    {
+        return $this->twig->plugin($name, $arguments);
+    }
+
+    public function setVars($variables)
+    {
+    }
 }
