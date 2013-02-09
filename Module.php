@@ -12,7 +12,7 @@ class Module implements AutoloaderProviderInterface
         $application = $event->getApplication();
         $serviceManager = $application->getServiceManager();
 
-        $view = $serviceManager->get('view');
+        $view = $serviceManager->get('viewmanager')->getView();
         $twigStrategy = $serviceManager->get('ViewTwigStrategy');
         $view->getEventManager()->attach($twigStrategy, 100);
     }
