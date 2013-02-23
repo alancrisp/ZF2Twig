@@ -17,6 +17,9 @@ class TwigRendererFactory implements FactoryInterface
         $resolver = $serviceManager->get('viewresolver');
         $twig = $serviceManager->get('twigenvironment');
 
-        return new TwigRenderer($resolver, $twig);
+        $renderer = new TwigRenderer($resolver, $twig);
+        $twig->plugin()->setRenderer($renderer);
+
+        return $renderer;
     }
 }

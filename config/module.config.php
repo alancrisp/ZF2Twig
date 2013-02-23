@@ -5,6 +5,7 @@ return array(
             'TwigEnvironment' => 'ZF2Twig\Environment\EnvironmentFactory',
             'TwigLoaderFilesystem' => 'ZF2Twig\Loader\FilesystemFactory',
             'ViewTwigRenderer' => 'ZF2Twig\View\Renderer\TwigRendererFactory',
+            'ViewTwigResolver' => 'ZF2Twig\View\Resolver\TwigResolverFactory',
             'ViewTwigStrategy' => 'ZF2Twig\View\Strategy\TwigStrategyFactory',
             'ZFTwigPluginProvider' => 'ZF2Twig\Environment\PluginProviderFactory',
         ),
