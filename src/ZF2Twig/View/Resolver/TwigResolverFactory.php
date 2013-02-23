@@ -17,8 +17,12 @@ class TwigResolverFactory implements FactoryInterface
         $config     = $serviceManager->get('config');
         $twigConfig = $config['zf2twig'];
 
-        $twigResolver = clone $serviceManager->get('ViewTemplatePathStack');
-        $twigResolver->setDefaultSuffix($twigConfig['default_suffix']);
+        $twigResolver = clone $serviceManager->get('ViewResolver');
+        foreach ($twigResolver as $resolver) {
+            if ($resolver instanceof \Zend\View\Resolver\TemplatePathStack) {
+                $resolver->setDefaultSuffix($twigConfig['default_suffix']);
+            }
+        }
 
         return $twigResolver;
     }

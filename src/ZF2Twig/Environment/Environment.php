@@ -20,7 +20,6 @@ class Environment extends \Twig_Environment
         parent::__construct($loader, $options);
 
         $this->pluginProvider = $pluginProvider;
-
         $this->addGlobal('plugin', $this->plugin());
     }
 
