@@ -9,12 +9,15 @@ class Module implements AutoloaderProviderInterface
 {
     public function onBootstrap(Event $event)
     {
-        $application = $event->getApplication();
+        $application    = $event->getApplication();
         $serviceManager = $application->getServiceManager();
 
-        $view = $serviceManager->get('viewmanager')->getView();
-        $twigStrategy = $serviceManager->get('ViewTwigStrategy');
+        $twigResolver = $serviceManager->get('ViewTwigResolver');
+        $viewResolver = $serviceManager->get('ViewResolver');
+        $viewResolver->attach($twigResolver);
 
+        $view         = $serviceManager->get('viewmanager')->getView();
+        $twigStrategy = $serviceManager->get('ViewTwigStrategy');
         $view->getEventManager()->attach($twigStrategy, 100);
     }
 

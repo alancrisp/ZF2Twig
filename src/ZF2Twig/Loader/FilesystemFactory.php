@@ -14,11 +14,7 @@ class FilesystemFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceManager)
     {
-        $config = $serviceManager->get('config');
-        $twigConfig = $config['zf2twig'];
-
-        $resolver = $serviceManager->get('viewtemplatepathstack');
-        $resolver->setDefaultSuffix($twigConfig['default_suffix']);
+        $resolver = $serviceManager->get('ViewTwigResolver');
 
         return new Filesystem($resolver);
     }
